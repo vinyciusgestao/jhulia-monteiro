@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR" data-type="service" data-radius="soft" data-buttons="block" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- tela de carregamento: o relógio começa antes das folhas de estilo; só aparece se a página demorar mais de 0,4 s -->
+<script>setTimeout(function(){if(document.readyState!=='complete')document.documentElement.classList.add('is-loading')},400)</script>
+<link rel="preload" href="assets/img/cliente/logo-96.png" as="image" fetchpriority="high">
+<title>Jhulia Monteiro | Advogada criminalista na Bahia e no Brasil</title>
+<meta name="description" content="Defesa criminal em prisão em flagrante, prisão preventiva e processo criminal, na Bahia e em todo o Brasil. Atendimento também à noite e aos fins de semana, pelo WhatsApp.">
+<link rel="canonical" href="https://vinyciusgestao.github.io/jhulia-monteiro/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Jhulia Monteiro | Advogada Criminalista">
+<meta property="og:url" content="https://vinyciusgestao.github.io/jhulia-monteiro/">
+<meta property="og:title" content="Jhulia Monteiro | Advogada criminalista">
+<meta property="og:description" content="Defesa criminal em flagrantes, prisões e processos, na Bahia e em todo o Brasil. Atendimento também à noite e aos fins de semana.">
+<meta property="og:image" content="https://vinyciusgestao.github.io/jhulia-monteiro/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jhulia Monteiro, advogada criminalista, OAB/BA nº 83977">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vinyciusgestao.github.io/jhulia-monteiro/og.jpg">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#f1ece7">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Attorney","name":"Jhulia Monteiro","description":"Advogada criminalista: prisão em flagrante, prisão preventiva e processo criminal.","url":"https://vinyciusgestao.github.io/jhulia-monteiro/","image":"https://vinyciusgestao.github.io/jhulia-monteiro/og.jpg","telephone":"+55 73 99140-7781","email":"jhuliamonteiroadv@gmail.com","address":{"@type":"PostalAddress","addressRegion":"BA","addressCountry":"BR"},"areaServed":"BR","knowsLanguage":"pt-BR"}</script><meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* tablet e celular: as seções empilhadas ocupam a altura certa de telas */
+@media (min-width: 640px) and (max-width: 799px) { #servicos .frame { --ratio: 38% !important; } }
+@media (min-width: 800px) and (max-width: 1023px) { #servicos .frame { --ratio: 56% !important; } }
+@media (min-width: 640px) and (max-width: 1023px) { #sobre .frame { --ratio: 50% !important; }
+  #contato .closing__links .grid > .span-6 { grid-column: 1 / -1; } #contato .closing__links .footer__col { grid-column: auto / span 6; } }
+@media (max-width: 639px) { #servicos, #sobre { --hm: 2; } #sobre .frame { --ratio: 125% !important; } }
+/* o nome no fechamento: 15 letras, tamanho ajustado à largura do .wrap */
+/* 1024 a 1279: texto mais largo (7 colunas) e foto em 5, para cada seção caber em uma tela */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #servicos .grid > .span-6:first-child, #sobre .grid > .span-6:first-child { grid-column: 1 / span 7; }
+  #servicos .grid > .frame, #sobre .grid > .frame { grid-column: 8 / span 5; }
+}
+/* quando os botões do topo empilham (1024), o link secundário alinha à margem esquerda */
+@media (min-width: 640px) { .hero .btn-row .btn--secondary { justify-content: flex-start; padding-inline: 0; } }
+/* celular: o mapa do site no rodapé repete o menu; ficam os contatos */
+@media (max-width: 639px) { #contato .footer__col { display: none; } }
+.hero__oab, .sobre__oab { font-size: var(--t-small); color: var(--muted); }
+.hero__oab { margin-top: var(--s-5); }
+.footer__contatos { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; gap: var(--s-2); }
+.footer__contatos a { display: inline-flex; align-items: center; min-height: 44px; }
+/* o retrato: quadrado no computador, 4:5 no celular */
+#sobre .frame--retrato { --ratio: 100%; }
+#sobre .section-head { margin-bottom: 0; }
+#flagrante, #preventiva, #processo, #primeiro-contato { scroll-margin-top: calc(var(--nav) + var(--s-6)); }
+/* a frase de direitos ocupa a tela: maior, no tamanho de um título de abertura */
+#direitos .mo-wh__text { font-size: clamp(34px, 4.3vw, 62px); line-height: 1.12; max-width: 28ch; }
+#direitos .direitos__next { margin-top: var(--s-7); }
+@media (max-width: 639px) { #contato .close__word { display: none; } }
+/* cor: texto e títulos em quase preto; o vinho fica para ações, links e o destaque da frase de direitos */
+#direitos .mo-wh__text strong { font-weight: 500; }
+/* MOVIMENTO (revisão de animações)
+   1. Barra fixa do WhatsApp no celular: entra com curva de gaveta (rápida no começo, pousa macio) e sai
+      mais depressa do que entra; quem reduz movimento vê só um esmaecer, sem deslizar. */
+@media (max-width: 639px) {
+  html .actionbar { --ease-drawer: cubic-bezier(.32, .72, 0, 1);
+    transition: transform 260ms var(--ease-drawer), visibility 0s; }
+  html .actionbar[data-bar="hidden"] { transition: transform 180ms cubic-bezier(.23, 1, .32, 1), visibility 0s 180ms; }
+}
+/* 2. Frase de direitos: as palavras em espera ficam a 60% da tinta (4:1 de contraste), legíveis antes
+      de acender; a troca de cor é curta e só de cor. */
+#direitos .mo-wh .mo-w { color: color-mix(in oklab, var(--ink) 60%, var(--bg)); transition: color 200ms ease; }
+#direitos .mo-wh .mo-w.is-on { color: var(--ink); }
+#direitos .mo-wh strong .mo-w.is-on { color: var(--accent); }
+/* 3. Telas de toque não têm hover: o sublinhado não fica "preso" depois de um toque (o foco do teclado continua) */
+@media (hover: none) {
+  html:not([data-motion="off"]) :is(.link, p a:not([class])):hover:not(:focus-visible) { background-size: 0% 1px, 100% 1px; }
+  html:not([data-motion="off"]) .footer ul a:hover:not(:focus-visible) { background-size: 0% 1px, 0% 1px; }
+}
+/* 4. Movimento reduzido: nada desliza, sobe ou cresce, mas as mudanças de cor e de opacidade continuam
+      suaves (150 ms), em vez de saltos secos; a frase de direitos já aparece inteira na cor final. */
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion="off"]) :is(.btn, .nav__link, .link, p a:not([class]), .footer ul a, .nav__toggle) {
+    transition-property: color, background-color, border-color, opacity !important;
+    transition-duration: 150ms !important; transition-timing-function: ease !important; }
+  #direitos .mo-wh .mo-w { color: var(--ink); transition: none; }
+  #direitos .mo-wh strong .mo-w { color: var(--accent); }
+  @media (max-width: 639px) {
+    html .actionbar, html .actionbar[data-bar="hidden"] { transform: none !important;
+      transition: opacity 150ms ease, visibility 0s !important; }
+    html .actionbar[data-bar="hidden"] { opacity: 0; transition: opacity 150ms ease, visibility 0s 150ms !important; }
+    html .actionbar:not([data-bar="shown"], [data-bar="always"]) { opacity: 0; }
+  }
+}
+#contato .close__word { font-size: clamp(40px, 8.2vw, 120px); line-height: 1.05; white-space: nowrap; }
+</style>
+<style>
+:root {
+  /* cores do logo da cliente: o marrom do círculo e o cobre das letras */
+  --p-bg: #f1ece7; --p-surface: #e7dfd8; --p-ink: #241a1b; --p-muted: #5f4a4c;
+  --p-accent: #5c3f3b; --p-accent-ink: #f1ece7; --p-action: #5c3f3b; --p-action-ink: #f1ece7;
+  --p-inv-bg: #5c3f3b; --p-inv-surface: #684944; --p-inv-ink: #f3ece6; --p-inv-muted: #d8c3b4;
+  --p-inv-accent: #e2b487; --p-inv-accent-ink: #3a2725; --p-inv-action: #e2b487; --p-inv-action-ink: #3a2725;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-text: "Schibsted Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.042em;
+  --ly-scale: 0.98;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+</head>
+<body>
+<div class="loader" aria-hidden="true"><img src="assets/img/cliente/logo-96.png" width="72" height="72" alt=""></div>
+<!-- type: service
+     deal: hero statement (sem fotografia forte da cliente: o topo é tipográfico), nav nav-centre, close close-photo
+     dealt, refeito como close-word (só há duas fotografias, já usadas acima),
+     footer footer-columns, rhythm dark-band (a seção Sobre), buttons block, mark ring, grounds none
+     palette oxblood-grey: cinza de pedra e vinho, a sobriedade de um escritório de advocacia e a cor das capas de
+     códigos e processos.
+     moments: word-highlight na seção #direitos -->
+
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <a class="nav__logo" href="#top"><img class="logo-jm" src="assets/img/cliente/logo-96.png" srcset="assets/img/cliente/logo-96.png 1x, assets/img/cliente/logo-192.png 2x" width="40" height="40" alt="">Jhulia Monteiro</a>
+    <nav class="nav__links" aria-label="Principal">
+      <div class="nav__item"><a class="nav__link" href="#top">Início</a></div>
+      <div class="nav__item"><a class="nav__link" href="#servicos">Serviços</a></div>
+      <div class="nav__item"><a class="nav__link" href="#sobre">Sobre</a></div>
+      <div class="nav__item"><a class="nav__link" href="#contato">Contato</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="https://wa.me/5573991407781?text=Ol%C3%A1%2C%20Dra.%20Jhulia.%20Preciso%20falar%20sobre%20um%20caso%20criminal." rel="noopener">Falar no WhatsApp</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" id="conteudo" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero__grid">
+      <div class="hero__text span-5">
+        <h1 id="hero-h">Advogada criminalista na Bahia e no Brasil</h1>
+        <p class="hero__lead">Jhulia Monteiro faz a defesa de quem foi preso em flagrante, teve a prisão decretada ou responde a processo criminal. Atende também à noite e aos fins de semana.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="https://wa.me/5573991407781?text=Ol%C3%A1%2C%20Dra.%20Jhulia.%20Preciso%20falar%20sobre%20um%20caso%20criminal." rel="noopener">Falar no WhatsApp<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#servicos">Ver as áreas de atuação</a>
+        </div>
+        <p class="hero__oab">OAB/BA nº 83977</p>
+      </div>
+      <div class="hero__media span-6 start-7">
+        <img src="assets/img/cliente/retrato-externo-960.webp" srcset="assets/img/cliente/retrato-externo-500.webp 500w, assets/img/cliente/retrato-externo-960.webp 960w, assets/img/cliente/retrato-externo-1400.webp 1400w" sizes="(max-width: 1023px) 100vw, 44vw" width="1542" height="2000" alt="Retrato de Jhulia Monteiro, advogada criminalista, de blazer preto" style="--ly-pos: 50% 22%" fetchpriority="high" data-source="client" data-subject="portrait">
+      </div>
+    </div></div>
+  </section>
+
+  <section class="section" id="servicos" aria-labelledby="servicos-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="servicos-h">Áreas de atuação. <span class="muted">Da delegacia ao tribunal.</span></h2>
+        <p>Encontre a situação mais próxima da sua. Em todas, o primeiro passo é uma mensagem pelo WhatsApp.</p>
+      </div>
+      <div class="grid grid--top">
+        <div class="span-6 stack-5">
+          <ul class="rows">
+            <li id="flagrante"><span class="rows__name">Prisão em flagrante</span><p>Acompanhamento na delegacia e na audiência de custódia, com pedido de soltura: liberdade provisória ou, se a prisão foi ilegal, relaxamento.</p></li>
+            <li id="preventiva"><span class="rows__name">Prisão preventiva e temporária</span><p>Pedidos para revogar a prisão e habeas corpus, o pedido urgente ao tribunal contra uma prisão ilegal, na Bahia e em outros estados.</p></li>
+            <li id="processo"><span class="rows__name">Processo criminal</span><p>Defesa em todas as fases, da investigação na delegacia ao julgamento: a resposta à acusação, as audiências, as alegações finais e os recursos.</p></li>
+          </ul>
+          <p><a class="link" href="#direitos">Ver os direitos de quem é preso</a></p>
+        </div>
+        <!-- foto provisória: troque pela foto do escritório ou do trabalho da Dra. Jhulia -->
+        <div class="frame frame--photo span-6 start-7" style="--ratio: 75%">
+          <img class="frame__img" src="assets/img/photo-c877.webp" srcset="assets/img/photo-c877-500.webp 500w, assets/img/photo-c877-960.webp 960w, assets/img/photo-c877.webp 1280w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 100vw, 50vw" width="1280" height="853" alt="Pilhas de livros vistas de perto" loading="lazy" decoding="async" data-source="library-057" data-subject="desk">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section statement" id="direitos" data-moment="word-highlight" aria-label="Direitos de quem é preso">
+    <div class="wrap">
+      <p class="mo-wh__text">Quem é preso em flagrante tem o direito de ficar em silêncio, de avisar a família e de ser assistido por advogado, e deve ser levado a uma <strong>audiência de custódia</strong> em até 24 horas.</p>
+      <p class="direitos__next"><a class="link" href="#primeiro-contato">Ver o que fazer no primeiro contato</a></p>
+    </div>
+  </section>
+
+  <section class="section ground-inverse" id="sobre" aria-labelledby="sobre-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-6 stack-6">
+          <div class="section-head">
+            <h2 id="sobre-h">Jhulia Monteiro, advogada criminalista</h2>
+            <p>Com base na Bahia, atende casos criminais em todo o Brasil. O primeiro contato é pelo WhatsApp, direto com a advogada.</p>
+            <p class="sobre__oab">Inscrita na OAB/BA sob o nº 83977.</p>
+          </div>
+          <div class="stack-4" id="primeiro-contato">
+            <h3>Primeiro contato pelo WhatsApp em 3 passos</h3>
+            <ol class="rows">
+              <li><span class="rows__name">1. Envie uma mensagem</span><p>Diga a cidade, o nome da pessoa envolvida e o que aconteceu.</p></li>
+              <li><span class="rows__name">2. Converse com a advogada</span><p>Ela lê o caso e explica quais são os próximos passos da defesa.</p></li>
+              <li><span class="rows__name">3. Combine a contratação</span><p>Os honorários são acertados antes de qualquer pedido no processo.</p></li>
+            </ol>
+          </div>
+        </div>
+        <div class="frame frame--photo frame--retrato span-6 start-7">
+          <img class="frame__img" src="assets/img/cliente/retrato-estudio-960.webp" srcset="assets/img/cliente/retrato-estudio-500.webp 500w, assets/img/cliente/retrato-estudio-960.webp 960w, assets/img/cliente/retrato-estudio-1400.webp 1400w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 100vw, 50vw" width="1566" height="2000" alt="Jhulia Monteiro de blazer preto, em estúdio" loading="lazy" decoding="async" style="object-position: 50% 18%" data-source="client" data-subject="portrait">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing" id="contato" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Fale com a advogada pelo WhatsApp</h2><p class="t-lead">Atendimento para casos na Bahia e em todo o Brasil.</p></div>
+        <a class="btn btn--primary" href="https://wa.me/5573991407781?text=Ol%C3%A1%2C%20Dra.%20Jhulia.%20Preciso%20falar%20sobre%20um%20caso%20criminal." rel="noopener">Falar no WhatsApp<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+      <p class="close__word" aria-hidden="true">Jhulia Monteiro</p>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-6 stack-4">
+          <p class="footer__lede">Advocacia criminal na Bahia e em todo o Brasil.</p>
+          <ul class="footer__contatos">
+            <li><a href="https://wa.me/5573991407781?text=Ol%C3%A1%2C%20Dra.%20Jhulia.%20Preciso%20falar%20sobre%20um%20caso%20criminal." rel="noopener">WhatsApp (73) 99140-7781</a></li>
+            <li><a href="mailto:jhuliamonteiroadv@gmail.com">jhuliamonteiroadv@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="span-3 start-7 footer__col"><h3>Serviços</h3><ul><li><a href="#flagrante">Prisão em flagrante</a></li><li><a href="#preventiva">Prisão preventiva</a></li><li><a href="#processo">Processo criminal</a></li></ul></div>
+        <div class="span-3 footer__col"><h3>Sobre</h3><ul><li><a href="#sobre">A advogada</a></li><li><a href="#primeiro-contato">Primeiro contato</a></li><li><a href="#direitos">Direitos do preso</a></li></ul></div>
+              </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Jhulia Monteiro · OAB/BA nº 83977</span>
+        <span class="footer__legal-links"><a href="privacidade.html">Política de privacidade</a><a href="termos.html">Termos de uso</a><button type="button" class="link-botao" data-cookies-abrir hidden>Preferências de cookies</button></span>
+        <a class="credits" href="credits.html">Fotografia de livros via Wikimedia Commons</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Ações rápidas">
+  <a class="btn btn--primary" href="https://wa.me/5573991407781?text=Ol%C3%A1%2C%20Dra.%20Jhulia.%20Preciso%20falar%20sobre%20um%20caso%20criminal." rel="noopener">Falar no WhatsApp</a>
+</nav>
+
+<div class="cookies" role="region" aria-label="Aviso de cookies" data-cookies hidden>
+  <p>Este site pode usar cookies de análise para entender como ele é visitado. Nenhum dado é usado para propaganda. Saiba mais na <a href="privacidade.html">Política de privacidade</a>.</p>
+  <div class="cookies__acoes">
+    <button class="btn btn--secondary" type="button" data-cookies-escolha="aceito">Aceitar cookies</button>
+    <button class="btn btn--secondary" type="button" data-cookies-escolha="recusado">Recusar</button>
+  </div>
+</div>
+
+<script type="module" src="assets/site.js"></script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+</body>
+</html>
